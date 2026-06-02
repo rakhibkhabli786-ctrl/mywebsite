@@ -1,5 +1,5 @@
-python3 << 'PYEOF'
-html = '''<!DOCTYPE html>
+cat > /mnt/user-data/outputs/index.html << 'EOF'
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -17,7 +17,6 @@ nav.scrolled{background:rgba(5,5,5,0.95);backdrop-filter:blur(14px);}
 .nav-links a{font-size:11px;color:rgba(255,255,255,0.6);text-decoration:none;letter-spacing:3px;text-transform:uppercase;transition:color 0.2s;opacity:0;animation:fadeDown 1s 0.6s forwards;}
 .nav-links a:hover{color:#fff;}
 .nav-cta{background:transparent;border:1px solid rgba(255,255,255,0.35);color:#fff;padding:8px 18px;border-radius:20px;font-size:10px;letter-spacing:2px;cursor:pointer;font-family:Inter,sans-serif;transition:all 0.2s;opacity:0;animation:fadeDown 1s 0.8s forwards;text-transform:uppercase;}
-.nav-cta:hover{background:rgba(255,255,255,0.08);}
 .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .hero-img{position:absolute;inset:0;background-image:url('IMG_20260602_170728.jpg');background-size:cover;background-position:center 15%;animation:zoomOut 10s ease forwards;}
 @keyframes zoomOut{from{transform:scale(1.07);}to{transform:scale(1);}}
@@ -26,7 +25,6 @@ nav.scrolled{background:rgba(5,5,5,0.95);backdrop-filter:blur(14px);}
 .hero-text h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,18vw,140px);letter-spacing:5px;line-height:0.95;opacity:0;animation:fadeUp 1.4s 0.2s cubic-bezier(0.16,1,0.3,1) forwards;text-shadow:0 8px 50px rgba(0,0,0,0.5);}
 .hero-roles{font-size:clamp(10px,2.5vw,14px);color:rgba(255,255,255,0.65);letter-spacing:6px;text-transform:uppercase;margin-top:16px;opacity:0;animation:fadeUp 1.4s 0.5s cubic-bezier(0.16,1,0.3,1) forwards;}
 .hero-sub{font-size:12px;color:rgba(255,255,255,0.38);margin-top:12px;letter-spacing:4px;text-transform:uppercase;opacity:0;animation:fadeUp 1.4s 0.8s cubic-bezier(0.16,1,0.3,1) forwards;}
-.hero-line{width:40px;height:1px;background:rgba(255,255,255,0.3);margin:16px auto 0;opacity:0;animation:fadeUp 1.4s 1s cubic-bezier(0.16,1,0.3,1) forwards;}
 .scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp 1s 1.6s forwards;cursor:pointer;}
 .scroll-hint span{font-size:8px;letter-spacing:5px;color:rgba(255,255,255,0.3);text-transform:uppercase;}
 .scroll-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.4);animation:bounce 2s ease-in-out infinite;}
@@ -46,11 +44,140 @@ nav.scrolled{background:rgba(5,5,5,0.95);backdrop-filter:blur(14px);}
 .add-btn:hover{border-color:rgba(255,255,255,0.4);color:#fff;}
 .empty-state{padding:50px 0;text-align:center;color:rgba(255,255,255,0.15);font-size:11px;letter-spacing:4px;text-transform:uppercase;}
 .yt-row{display:flex;gap:10px;margin-bottom:14px;}
-.yt-row input{flex:1;background:#121212;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:12px 16px;font-size:13px;font-family:Inter,sans-serif;color:#fff;outline:none;transition:border-color 0.2s;}
+.yt-row input{flex:1;background:#121212;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:12px 16px;font-size:13px;font-family:Inter,sans-serif;color:#fff;outline:none;}
 .yt-row input::placeholder{color:rgba(255,255,255,0.2);}
 .yt-row input:focus{border-color:rgba(255,255,255,0.25);}
 .vid-card{background:#0e0e0e;border-radius:12px;overflow:hidden;margin-bottom:10px;border:1px solid rgba(255,255,255,0.05);}
 .vid-thumb{width:100%;aspect-ratio:16/9;background:#161616;display:flex;align-items:center;justify-content:center;}
 .play-ring{width:54px;height:54px;border:1.5px solid rgba(255,255,255,0.45);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all 0.3s;}
-.vid-thumb:hover .play-ring{border-color:#fff;background:rgba(255,255,255,0.07);transform:scale(1.1);}
+.vid-thumb:hover .play-ring{border-color:#fff;transform:scale(1.1);}
 .vid-meta{padding:13px 16px;}
+.vid-meta h3{font-size:14px;font-weight:400;}
+.vid-meta p{font-size:10px;color:rgba(255,255,255,0.22);margin-top:4px;letter-spacing:3px;text-transform:uppercase;}
+.write-card{background:#0e0e0e;border-radius:12px;padding:18px;margin-bottom:14px;border:1px solid rgba(255,255,255,0.05);}
+.write-card textarea{width:100%;background:transparent;border:none;outline:none;font-size:14px;font-family:Inter,sans-serif;color:rgba(255,255,255,0.75);resize:none;height:80px;line-height:1.6;}
+.write-card textarea::placeholder{color:rgba(255,255,255,0.16);}
+.write-foot{display:flex;justify-content:flex-end;padding-top:10px;border-top:1px solid rgba(255,255,255,0.05);}
+.post-card{background:#0e0e0e;border-radius:12px;padding:20px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.05);}
+.post-d{font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:4px;text-transform:uppercase;margin-bottom:10px;}
+.post-card p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;}
+.btn{background:#fff;color:#0a0a0a;border:none;padding:10px 24px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:2px;cursor:pointer;font-family:Inter,sans-serif;text-transform:uppercase;}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:rgba(5,5,5,0.97);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.05);display:flex;z-index:50;}
+.bnav-item{flex:1;padding:13px 8px 11px;text-align:center;cursor:pointer;color:rgba(255,255,255,0.22);border-top:1.5px solid transparent;transition:all 0.25s;}
+.bnav-item.active{color:#fff;border-top-color:#fff;}
+.bnav-icon{font-size:19px;}
+.bnav-label{font-size:8px;letter-spacing:2px;text-transform:uppercase;margin-top:3px;}
+.page{display:none;padding-bottom:90px;}
+.page.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-name">Rakhib</div>
+  <div class="nav-links">
+    <a href="#" onclick="showPage('photos');return false;">Photos</a>
+    <a href="#" onclick="showPage('videos');return false;">Videos</a>
+    <a href="#" onclick="showPage('posts');return false;">Posts</a>
+    <button class="nav-cta" onclick="document.getElementById('mainContent').scrollIntoView({behavior:'smooth'})">Explore</button>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <h1>Rakhib</h1>
+    <div class="hero-roles">Personal &nbsp;·&nbsp; Website</div>
+    <div class="hero-sub">Photos &nbsp;·&nbsp; Videos &nbsp;·&nbsp; Posts</div>
+  </div>
+  <div class="scroll-hint" onclick="document.getElementById('mainContent').scrollIntoView({behavior:'smooth'})">
+    <span>Explore</span><div class="scroll-dot"></div>
+  </div>
+</div>
+<div id="mainContent">
+  <div class="page active" id="page-photos">
+    <div class="section">
+      <div class="sec-label">Gallery</div>
+      <div class="sec-title" id="title-photos">My Photos</div>
+      <div id="emptyPhotos" class="empty-state">No photos yet — add your first</div>
+      <div class="pgrid" id="photoGrid"></div>
+      <label class="add-btn">+ Add Photo<input type="file" accept="image/*" multiple style="display:none" onchange="addPhotos(event)"></label>
+    </div>
+  </div>
+  <div class="page" id="page-videos">
+    <div class="section">
+      <div class="sec-label">Media</div>
+      <div class="sec-title" id="title-videos">My Videos</div>
+      <div class="yt-row"><input type="text" id="ytLink" placeholder="Paste YouTube link..."/><button class="btn" onclick="addVideo()">Add</button></div>
+      <div id="videoList"><div class="vid-card"><div class="vid-thumb"><div class="play-ring">&#9654;</div></div><div class="vid-meta"><h3>First Video</h3><p>Add a YouTube link above</p></div></div></div>
+    </div>
+  </div>
+  <div class="page" id="page-posts">
+    <div class="section">
+      <div class="sec-label">Thoughts</div>
+      <div class="sec-title" id="title-posts">My Posts</div>
+      <div class="write-card"><textarea id="postText" placeholder="Write something..."></textarea><div class="write-foot"><button class="btn" onclick="addPost()">Post</button></div></div>
+      <div id="postList"><div class="post-card"><div class="post-d">June 2026</div><p>Welcome to my personal website.</p></div></div>
+    </div>
+  </div>
+</div>
+<div class="bottom-nav">
+  <div class="bnav-item active" id="bnav-photos" onclick="showPage('photos')"><div class="bnav-icon">&#128247;</div><div class="bnav-label">Photos</div></div>
+  <div class="bnav-item" id="bnav-videos" onclick="showPage('videos')"><div class="bnav-icon">&#127909;</div><div class="bnav-label">Videos</div></div>
+  <div class="bnav-item" id="bnav-posts" onclick="showPage('posts')"><div class="bnav-icon">&#9998;</div><div class="bnav-label">Posts</div></div>
+</div>
+<script>
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);});
+function showPage(p){
+  document.querySelectorAll('.page').forEach(function(x){x.classList.remove('active');});
+  document.querySelectorAll('.bnav-item').forEach(function(x){x.classList.remove('active');});
+  document.getElementById('page-'+p).classList.add('active');
+  document.getElementById('bnav-'+p).classList.add('active');
+  document.getElementById('mainContent').scrollIntoView({behavior:'smooth'});
+  var t=document.getElementById('title-'+p);
+  if(t){t.classList.remove('visible');setTimeout(function(){t.classList.add('visible');},100);}
+}
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.sec-title').forEach(function(el){obs.observe(el);});
+setTimeout(function(){document.querySelectorAll('.sec-title').forEach(function(el){el.classList.add('visible');});},300);
+function addPhotos(e){
+  var grid=document.getElementById('photoGrid');
+  document.getElementById('emptyPhotos').style.display='none';
+  Array.from(e.target.files).forEach(function(file,i){
+    var url=URL.createObjectURL(file);
+    var div=document.createElement('div');
+    div.className='pgrid-item';
+    div.style.transitionDelay=(i*0.08)+'s';
+    div.innerHTML='<img src="'+url+'"><div class="pover"></div>';
+    grid.appendChild(div);
+    setTimeout(function(){div.classList.add('visible');},50);
+  });
+}
+function addVideo(){
+  var link=document.getElementById('ytLink').value.trim();
+  if(!link)return;
+  var match=link.match(/(?:v=|youtu.be\/)([^&\n?#]+)/);
+  var list=document.getElementById('videoList');
+  var card=document.createElement('div');
+  card.className='vid-card';
+  if(match){card.innerHTML='<iframe width="100%" style="aspect-ratio:16/9;border:none;display:block" src="https://www.youtube.com/embed/'+match[1]+'" allowfullscreen></iframe><div class="vid-meta"><h3>My Video</h3><p>YouTube</p></div>';}
+  list.prepend(card);
+  document.getElementById('ytLink').value='';
+}
+function addPost(){
+  var text=document.getElementById('postText').value.trim();
+  if(!text)return;
+  var list=document.getElementById('postList');
+  var now=new Date().toLocaleDateString('en-US',{month:'long',year:'numeric'}).toUpperCase();
+  var card=document.createElement('div');
+  card.className='post-card';
+  card.innerHTML='<div class="post-d">'+now+'</div><p>'+text+'</p>';
+  list.prepend(card);
+  document.getElementById('postText').value='';
+}
+</script>
+</body>
+</html>
+EOF
+echo "done"

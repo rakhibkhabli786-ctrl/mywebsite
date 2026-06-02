@@ -1,28 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Rakhib Official Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rakhib Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial;
+    background:#050816;
+    color:white;
+}
+
+/* Navbar */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:#0b1023;
+    border-bottom:1px solid #222;
+}
+
+nav h1{
+    color:#00c3ff;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:15px;
+}
+
+/* Hero Section */
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:5px solid #00c3ff;
+    box-shadow:0 0 30px #00c3ff;
+}
+
+.hero h2{
+    font-size:50px;
+    margin-top:20px;
+}
+
+.hero span{
+    color:#00c3ff;
+}
+
+.hero p{
+    color:#cccccc;
+    margin-top:15px;
+    font-size:20px;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.buttons a{
+    text-decoration:none;
+    color:white;
+    background:#00c3ff;
+    padding:15px 30px;
+    margin:10px;
+    border-radius:10px;
+    display:inline-block;
+    font-size:18px;
+}
+
+/* Cards */
+
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:30px;
+}
+
+.card{
+    background:#11182e;
+    margin:15px;
+    padding:30px;
+    width:250px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,195,255,0.3);
+}
+
+.card h3{
+    color:#00c3ff;
+    margin-bottom:10px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:gray;
+}
+
+</style>
+
 </head>
 
-<body style="background-color:black; text-align:center;">
+<body>
 
-    <h1 style="color:white; font-size:50px;">
-        Rakhib
-    </h1>
+<nav>
+    <h1>Rakhib</h1>
 
-    <img src="myphoto.jpg"
-         width="200"
-         style="border-radius:100px;">
+    <div>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
 
-    <p style="color:white; font-size:25px;">
-        Welcome to my personal website
-    </p>
+<section class="hero">
 
-    <p style="color:gray;">
-        
-    </p>
+    <img src="myphoto.jpg">
+
+    <h2>Hi, I'm <span>Rakhib</span></h2>
+
+    <p>Web Developer & Designer</p>
+
+    <div class="buttons">
+        <a href="#">My Projects</a>
+        <a href="#">Contact Me</a>
+    </div>
+
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <h3>Web Design</h3>
+        <p>Modern responsive website design.</p>
+    </div>
+
+    <div class="card">
+        <h3>Projects</h3>
+        <p>Creative coding and development projects.</p>
+    </div>
+
+    <div class="card">
+        <h3>Learning</h3>
+        <p>Always learning new technology.</p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Rakhib Portfolio
+</footer>
 
 </body>
-
 </html>

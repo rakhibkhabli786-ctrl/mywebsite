@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,6 +14,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
@@ -21,99 +23,148 @@ body{
     color:white;
 }
 
-/* Navbar */
+/* NAVBAR */
 
 nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:20px;
-    background:#0b1023;
-    border-bottom:1px solid #222;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(10px);
+    z-index:1000;
 }
 
 nav h1{
     color:#00c3ff;
+    font-size:30px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:15px;
+    margin-left:20px;
+    font-size:18px;
 }
 
-/* Hero Section */
+/* HERO SECTION */
 
 .hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.6),
+    rgba(0,0,0,0.7)),
+    
+    url('myphoto.jpg');
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:60px 20px;
+    padding:20px;
 }
 
-.hero img{
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    border:5px solid #00c3ff;
-    box-shadow:0 0 30px #00c3ff;
+.hero-content h2{
+    font-size:65px;
+    text-shadow:0 0 20px #00c3ff;
 }
 
-.hero h2{
-    font-size:50px;
-    margin-top:20px;
-}
-
-.hero span{
+.hero-content span{
     color:#00c3ff;
 }
 
-.hero p{
-    color:#cccccc;
-    margin-top:15px;
-    font-size:20px;
+.hero-content p{
+    margin-top:20px;
+    font-size:25px;
+    color:#dddddd;
 }
 
 .buttons{
-    margin-top:30px;
+    margin-top:35px;
 }
 
 .buttons a{
     text-decoration:none;
     color:white;
     background:#00c3ff;
-    padding:15px 30px;
+    padding:15px 35px;
     margin:10px;
     border-radius:10px;
+    font-size:20px;
     display:inline-block;
-    font-size:18px;
+    transition:0.3s;
 }
 
-/* Cards */
+.buttons a:hover{
+    background:white;
+    color:black;
+}
+
+/* SECTION */
+
+.section{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.section h2{
+    color:#00c3ff;
+    font-size:45px;
+    margin-bottom:30px;
+}
+
+.section p{
+    max-width:700px;
+    margin:auto;
+    font-size:22px;
+    color:#cccccc;
+    line-height:1.8;
+}
+
+/* PROJECT CARDS */
 
 .cards{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    padding:30px;
+    margin-top:40px;
 }
 
 .card{
-    background:#11182e;
+    background:#10182c;
+    width:280px;
     margin:15px;
     padding:30px;
-    width:250px;
-    border-radius:15px;
-    text-align:center;
+    border-radius:20px;
     box-shadow:0 0 20px rgba(0,195,255,0.3);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
 }
 
 .card h3{
     color:#00c3ff;
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
+
+.card p{
+    font-size:18px;
+}
+
+/* FOOTER */
 
 footer{
     text-align:center;
-    padding:20px;
+    padding:30px;
+    background:#0a0f1f;
     color:gray;
 }
 
@@ -123,54 +174,107 @@ footer{
 
 <body>
 
-<nav>
-    <h1>Rakhib</h1>
+<!-- NAVBAR -->
 
-    <div>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
-    </div>
+<nav>
+
+<h1>Rakhib</h1>
+
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+
 </nav>
 
-<section class="hero">
+<!-- HERO -->
 
-    <img src="myphoto.jpg">
+<section class="hero" id="home">
 
-    <h2>Hi, I'm <span>Rakhib</span></h2>
+<div class="hero-content">
 
-    <p>Web Developer & Designer</p>
+<h2>Hi, I'm <span>Rakhib</span></h2>
 
-    <div class="buttons">
-        <a href="#">My Projects</a>
-        <a href="#">Contact Me</a>
-    </div>
+<p>Web Developer & Creative Designer</p>
+
+<div class="buttons">
+
+<a href="#projects">My Projects</a>
+
+<a href="#contact">Contact Me</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+<h2>About Me</h2>
+
+<p>
+
+Hello! I am Rakhib.  
+
+
+</p>
 
 </section>
 
-<section class="cards">
+<!-- PROJECTS -->
 
-    <div class="card">
-        <h3>Web Design</h3>
-        <p>Modern responsive website design.</p>
-    </div>
+<section class="section" id="projects">
 
-    <div class="card">
-        <h3>Projects</h3>
-        <p>Creative coding and development projects.</p>
-    </div>
+<h2>My Projects</h2>
 
-    <div class="card">
-        <h3>Learning</h3>
-        <p>Always learning new technology.</p>
-    </div>
+<div class="cards">
+
+<div class="card">
+<h3>Website Design</h3>
+<p>Modern responsive websites with futuristic style.</p>
+</div>
+
+<div class="card">
+<h3>Python Projects</h3>
+<p>Learning automation and coding with Python.</p>
+</div>
+
+<div class="card">
+<h3>Creative Ideas</h3>
+<p>Creating unique digital and web experiences.</p>
+</div>
+
+</div>
 
 </section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+<h2>Contact</h2>
+
+<p>
+
+Email: yourname@gmail.com
+
+</p>
+
+</section>
+
+<!-- FOOTER -->
 
 <footer>
-    © 2026 Rakhib Portfolio
+
+© 2026 Rakhib Portfolio Website
+
 </footer>
 
 </body>
+
 </html>
